@@ -7,11 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     public static String BASE_URL = "https://www.thecocktaildb.com/api/json/v1/1/";
-
     private static Retrofit retrofit;
-
     public static Retrofit getClient() {
-
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(interceptor).build();
@@ -24,6 +21,5 @@ public class ApiClient {
                     .build();
         }
         return retrofit;
-
     }
 }
